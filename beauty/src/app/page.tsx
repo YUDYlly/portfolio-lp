@@ -85,7 +85,7 @@ const promises = [
   },
 ];
 
-const cases = [
+const voices = [
   {
     label: "しみ治療（フォトフェイシャル 5回）",
     age: "40代女性",
@@ -148,7 +148,7 @@ const faqs = [
 export default function BeautyPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#2d2926] selection:bg-[#B76E79]/20 selection:text-[#2d2926]">
-      {/* ===== Nav — floating top-right (Orchidée style, no header bar) ===== */}
+      {/* ===== Nav — floating top-right (Orchidee style, no header bar) ===== */}
       <nav className="fixed top-0 right-0 z-50 hidden items-center gap-8 px-8 py-6 md:flex">
         {[
           { label: "Treatment", href: "#menu" },
@@ -180,7 +180,7 @@ export default function BeautyPage() {
         />
       </div>
 
-      {/* ===== 1. Hero — Orchidée-style editorial ===== */}
+      {/* ===== 1. Hero — Orchidee-style editorial ===== */}
       <section className="relative min-h-[100dvh] overflow-hidden bg-white">
         {/* Brand name — massive, flush left, near top */}
         <div className="absolute top-4 left-0 z-20 pl-3 sm:top-6 sm:pl-6 lg:top-8 lg:pl-8">
@@ -194,7 +194,7 @@ export default function BeautyPage() {
         </div>
 
         {/* Subtitle block — directly below brand name, shifted right */}
-        <div className="absolute top-[46%] left-[5%] z-20 sm:top-[44%] sm:left-[6%] lg:top-[42%] lg:left-[8%]">
+        <div className="absolute top-[54%] left-[5%] z-20 sm:top-[52%] sm:left-[6%] lg:top-[50%] lg:left-[8%]">
           <FadeIn delay={300}>
             <div className="max-w-sm px-6 py-5 sm:max-w-md">
               <p className="font-serif text-lg leading-relaxed font-normal text-black sm:text-xl">
@@ -207,8 +207,8 @@ export default function BeautyPage() {
           </FadeIn>
         </div>
 
-        {/* Scroll indicator — left edge, vertically centered */}
-        <div className="absolute top-1/2 left-3 z-20 hidden -translate-y-1/2 lg:block">
+        {/* Scroll indicator — left edge, lower area */}
+        <div className="absolute top-[78%] left-3 z-20 hidden -translate-y-1/2 lg:block">
           <p className="origin-center -rotate-90 whitespace-nowrap text-[9px] tracking-[.25em] text-black">
             ( please scroll down )
           </p>
@@ -262,8 +262,8 @@ export default function BeautyPage() {
         </div>
       </section>
 
-      {/* ===== Gallery — Orchidée-style scattered images on dark bg ===== */}
-      <section className="relative overflow-hidden bg-[#1a2a3a]">
+      {/* ===== Gallery — Orchidee-style scattered images on dark bg ===== */}
+      <section id="gallery" className="relative overflow-hidden bg-[#1a2a3a]">
         <div className="relative mx-auto min-h-[110vh] max-w-[1600px] lg:min-h-[120vh]">
           {/* Brand name — centered, large white */}
           <h2 className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 font-serif text-[5rem] italic font-normal text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] sm:text-[8rem] lg:text-[12rem] xl:text-[14rem]">
@@ -276,7 +276,7 @@ export default function BeautyPage() {
           </div>
 
           {/* Top-left: 蘭マクロ（ブルーグレー） */}
-          <div className="absolute -left-[3%] top-[18%] z-[2] w-[28%] overflow-hidden">
+          <div className="absolute -left-[3%] top-[18%] w-[28%] overflow-hidden">
             <Image src="/images/gallery-6.webp" alt="" width={800} height={1067} className="w-full" />
           </div>
 
@@ -286,22 +286,22 @@ export default function BeautyPage() {
           </div>
 
           {/* Top-right: モデル × 蘭 × 製品 */}
-          <div className="absolute right-[5%] top-[6%] z-[2] w-[32%] overflow-hidden">
+          <div className="absolute right-[5%] top-[2%] z-[2] w-[28%] overflow-hidden">
             <Image src="/images/gallery-1.webp" alt="" width={800} height={1067} className="w-full" />
           </div>
 
           {/* Bottom-left: ショートヘアモデル */}
-          <div className="absolute bottom-[0%] left-[1%] w-[35%] overflow-hidden">
+          <div className="absolute bottom-[0%] left-[1%] z-[3] w-[35%] overflow-hidden">
             <Image src="/images/gallery-2.webp" alt="" width={800} height={600} className="w-full" />
           </div>
 
-          {/* Bottom-center: プリズム光 */}
-          <div className="absolute bottom-[0%] left-[40%] w-[28%] overflow-hidden">
+          {/* Bottom-center: プリズム × 顔クローズアップ */}
+          <div className="absolute bottom-[0%] left-[42%] w-[22%] overflow-hidden">
             <Image src="/images/gallery-3.webp" alt="" width={800} height={1067} className="w-full" />
           </div>
 
           {/* Bottom-right: 横顔 × 花びら */}
-          <div className="absolute bottom-[10%] right-[0%] w-[26%] overflow-hidden">
+          <div className="absolute bottom-[4%] right-[1%] w-[24%] overflow-hidden">
             <Image src="/images/gallery-4.webp" alt="" width={800} height={800} className="w-full" />
           </div>
         </div>
@@ -322,11 +322,21 @@ export default function BeautyPage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-8">
+          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
             {concerns.map((c, i) => (
               <FadeIn key={i} delay={150 + i * 100}>
-                <div className="group">
-                  <div className="mb-6 h-px w-full bg-[#B76E79]/15" />
+                <div
+                  className={`py-8 sm:py-10 ${
+                    i > 0
+                      ? "border-t border-[#B76E79]/10 sm:border-t-0 sm:border-l sm:pl-8"
+                      : ""
+                  } ${i < concerns.length - 1 ? "sm:pr-8" : ""} ${
+                    i === 0 ? "sm:pr-8" : ""
+                  } ${i % 2 === 0 && i > 0 ? "sm:border-l-0 sm:pl-0 sm:border-t lg:border-t-0 lg:border-l lg:pl-8" : ""}`}
+                >
+                  <span className="mb-5 block font-serif text-[2.5rem] font-light leading-none text-[#B76E79]/10">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <h3 className="mb-3 font-serif text-lg font-normal tracking-wide">
                     {c.title}
                   </h3>
@@ -340,7 +350,7 @@ export default function BeautyPage() {
         </div>
       </section>
 
-      {/* ===== 4. Treatment Menu ===== */}
+      {/* ===== 4. Treatment Menu — editorial typography ===== */}
       <section id="menu" className="bg-white py-28 sm:py-36 lg:py-44">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <FadeIn>
@@ -355,42 +365,29 @@ export default function BeautyPage() {
             </h2>
           </FadeIn>
 
-          <div className="space-y-24 sm:space-y-32 lg:space-y-40">
+          <div className="border-t border-[#B76E79]/[.08]">
             {treatments.map((t, i) => (
               <FadeIn key={i} delay={100}>
-                <div className="grid grid-cols-1 items-center gap-10 sm:gap-14 md:grid-cols-2 lg:gap-20">
-                  {/* Image placeholder */}
-                  <div
-                    className={i % 2 === 0 ? "md:order-1" : "md:order-2"}
-                  >
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-[#faf7f2] to-[#f0e6df]">
-                      {/* TODO: Replace with actual image */}
-                      <Image
-                        src={`/images/treatment-${t.num}.webp`}
-                        alt={t.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Text */}
-                  <div
-                    className={i % 2 === 0 ? "md:order-2" : "md:order-1"}
-                  >
-                    <span className="mb-4 block font-serif text-5xl font-light text-[#B76E79]/15 lg:text-6xl">
+                <div className="grid grid-cols-1 gap-6 border-b border-[#B76E79]/[.08] py-14 sm:gap-10 sm:py-16 md:grid-cols-[280px_1fr] lg:gap-20 lg:py-20">
+                  {/* Left: Number + Title */}
+                  <div>
+                    <span className="mb-4 block font-serif text-6xl font-light text-[#B76E79]/10 lg:text-7xl">
                       {t.num}
                     </span>
-                    <h3 className="mb-2 font-serif text-2xl font-normal tracking-wide">
+                    <h3 className="mb-1.5 font-serif text-xl font-normal tracking-wide sm:text-2xl">
                       {t.title}
                     </h3>
-                    <span className="mb-6 block text-[11px] tracking-[.3em] text-[#2d2926]/30 uppercase">
+                    <span className="block text-[11px] tracking-[.3em] text-[#2d2926]/30 uppercase">
                       {t.subtitle}
                     </span>
-                    <p className="mb-6 text-[13px] leading-[2.2] font-light text-[#2d2926]/50">
+                  </div>
+
+                  {/* Right: Description + Duration */}
+                  <div className="flex flex-col justify-center">
+                    <p className="mb-6 text-[13px] leading-[2.4] font-light text-[#2d2926]/50 sm:text-[14px]">
                       {t.desc}
                     </p>
-                    <span className="inline-block rounded-full border border-[#B76E79]/15 px-4 py-1.5 text-[11px] tracking-wider text-[#B76E79]/60">
+                    <span className="inline-block self-start rounded-full border border-[#B76E79]/15 px-5 py-2 text-[11px] tracking-wider text-[#B76E79]/60">
                       {t.duration}
                     </span>
                   </div>
@@ -416,30 +413,38 @@ export default function BeautyPage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10 lg:gap-14">
+          <div className="md:grid md:grid-cols-3 md:grid-rows-[auto_auto_auto_1fr]">
             {promises.map((p, i) => (
-              <FadeIn key={i} delay={150 + i * 120}>
-                <div className="text-center md:text-left">
-                  <span className="mb-5 block font-serif text-6xl font-light text-[#B76E79]/10 lg:text-7xl">
-                    {p.num}
-                  </span>
-                  <h3 className="mb-4 whitespace-pre-line font-serif text-lg font-normal leading-relaxed tracking-wide">
-                    {p.title}
-                  </h3>
-                  <div className="mx-auto mb-5 h-px w-10 bg-[#B76E79]/20 md:mx-0" />
-                  <p className="text-[13px] leading-[2.2] font-light text-[#2d2926]/45">
-                    {p.desc}
-                  </p>
-                </div>
+              <FadeIn
+                key={i}
+                delay={150 + i * 120}
+                className={`md:row-span-4 md:grid md:grid-rows-subgrid py-10 md:px-10 md:py-0 ${
+                  i > 0
+                    ? "border-t border-[#B76E79]/10 md:border-t-0 md:border-l"
+                    : ""
+                } ${i === 0 ? "md:pl-0" : ""} ${
+                  i === promises.length - 1 ? "md:pr-0" : ""
+                }`}
+              >
+                <span className="mb-5 block font-serif text-6xl font-light text-[#B76E79]/8 md:mb-0 md:self-end lg:text-7xl">
+                  {p.num}
+                </span>
+                <h3 className="mb-4 whitespace-pre-line font-serif text-lg font-normal leading-relaxed tracking-wide md:mb-0 md:pt-2">
+                  {p.title}
+                </h3>
+                <div className="mb-5 h-px w-8 bg-[#B76E79]/20 md:mb-0 md:mt-4 md:self-start" />
+                <p className="text-[13px] leading-[2.2] font-light text-[#2d2926]/45 md:pt-2">
+                  {p.desc}
+                </p>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== 6. Doctor Introduction ===== */}
-      <section id="doctor" className="bg-white py-28 sm:py-36 lg:py-44">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+      {/* ===== 6. Doctor Introduction — editorial typography ===== */}
+      <section id="doctor" className="bg-white py-20 sm:py-28 lg:py-32">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <FadeIn>
             <span className="mb-4 block text-center text-[11px] font-normal tracking-[.35em] text-[#B76E79]/50 uppercase">
               Doctor
@@ -447,45 +452,48 @@ export default function BeautyPage() {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h2 className="mb-20 text-center font-serif text-[1.75rem] font-light leading-snug tracking-wide sm:mb-24 sm:text-3xl lg:text-[2.25rem]">
+            <h2 className="mb-14 text-center font-serif text-[1.75rem] font-light leading-snug tracking-wide sm:mb-16 sm:text-3xl lg:text-[2.25rem]">
               院長紹介
             </h2>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
-              {/* Portrait */}
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-[#faf7f2] to-[#f0e6df]">
-                {/* TODO: Replace with actual image */}
-                <Image
-                  src="/images/doctor.webp"
-                  alt="院長 白石 美咲"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="text-center">
+              <span className="mb-2 block text-[11px] tracking-[.3em] text-[#2d2926]/30 uppercase">
+                Director
+              </span>
+              <h3 className="mb-1.5 font-serif text-3xl font-normal tracking-wide sm:text-4xl">
+                白石 美咲
+              </h3>
+              <span className="mb-8 block text-[13px] tracking-wider text-[#2d2926]/35">
+                Misaki Shiraishi, M.D.
+              </span>
 
-              {/* Profile */}
-              <div>
-                <span className="mb-2 block text-[11px] tracking-[.3em] text-[#2d2926]/30 uppercase">
-                  Director
-                </span>
-                <h3 className="mb-2 font-serif text-2xl font-normal tracking-wide">
-                  白石 美咲
-                </h3>
-                <span className="mb-8 block text-[12px] tracking-wider text-[#2d2926]/40">
-                  Misaki Shiraishi, M.D.
-                </span>
+              <div className="mx-auto mb-8 h-px w-12 bg-[#B76E79]/20" />
 
-                <ul className="mb-10 space-y-2 text-[13px] leading-relaxed text-[#2d2926]/50">
-                  <li>日本美容外科学会 専門医</li>
-                  <li>日本皮膚科学会 認定皮膚科専門医</li>
-                  <li>東京大学医学部 卒業</li>
-                  <li>都内大手美容クリニック 勤務を経て当院開設</li>
-                </ul>
+              <ul className="mb-10 space-y-2 text-[13px] leading-relaxed text-[#2d2926]/50">
+                <li>日本美容外科学会 専門医</li>
+                <li>日本皮膚科学会 認定皮膚科専門医</li>
+                <li>東京大学医学部 卒業</li>
+                <li>都内大手美容クリニック 勤務を経て当院開設</li>
+              </ul>
+            </div>
+          </FadeIn>
 
-                <div className="border-l-2 border-[#B76E79]/20 pl-6">
-                  <p className="font-serif text-[14px] italic leading-[2.2] text-[#2d2926]/60">
+          <FadeIn delay={300}>
+            <div className="relative mx-auto max-w-xl">
+              <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[140px_1fr]">
+                <div className="mx-auto h-[180px] w-[140px] overflow-hidden sm:mx-0">
+                  <Image
+                    src="/images/doctor.jpeg"
+                    alt="白石 美咲 院長"
+                    width={280}
+                    height={360}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <div className="border-l-2 border-[#B76E79]/20 py-1 pl-8">
+                  <p className="font-serif text-[15px] italic leading-[2.2] text-[#2d2926]/55">
                     &ldquo;美容医療は、外見を変えることではなく、内面の自信を引き出すこと。
                     お一人おひとりの「なりたい自分」に寄り添い、
                     最善の治療をご提案することが、私の使命です。&rdquo;
@@ -497,70 +505,47 @@ export default function BeautyPage() {
         </div>
       </section>
 
-      {/* ===== 7. Cases / Results ===== */}
+      {/* ===== 7. Voice — testimonial cards ===== */}
       <section className="bg-[#faf7f2] py-28 sm:py-36 lg:py-44">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <FadeIn>
             <span className="mb-4 block text-center text-[11px] font-normal tracking-[.35em] text-[#B76E79]/50 uppercase">
-              Cases
+              Voice
             </span>
           </FadeIn>
 
           <FadeIn delay={100}>
             <h2 className="mb-20 text-center font-serif text-[1.75rem] font-light leading-snug tracking-wide sm:mb-24 sm:text-3xl lg:text-[2.25rem]">
-              症例のご紹介
+              患者様の声
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-            {cases.map((c, i) => (
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {voices.map((v, i) => (
               <FadeIn key={i} delay={150 + i * 100}>
-                <div className="rounded-2xl border border-[#B76E79]/[.08] bg-white p-8 transition-all duration-300 hover:border-[#B76E79]/15 sm:p-10">
-                  {/* Before / After placeholder */}
-                  <div className="mb-8 flex gap-3">
-                    <div className="relative flex-1">
-                      <div className="aspect-square overflow-hidden rounded-xl bg-gradient-to-br from-[#f5f0eb] to-[#ede4db]">
-                        {/* TODO: Replace with actual image */}
-                        <Image
-                          src={`/images/case-${i + 1}-before.webp`}
-                          alt={`${c.label} Before`}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <span className="absolute bottom-2 left-2 rounded-full bg-white/80 px-2 py-0.5 text-[9px] tracking-wider text-[#2d2926]/50 backdrop-blur-sm">
-                        Before
-                      </span>
-                    </div>
-                    <div className="relative flex-1">
-                      <div className="aspect-square overflow-hidden rounded-xl bg-gradient-to-br from-[#faf7f2] to-[#f0e6df]">
-                        {/* TODO: Replace with actual image */}
-                        <Image
-                          src={`/images/case-${i + 1}-after.webp`}
-                          alt={`${c.label} After`}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <span className="absolute bottom-2 left-2 rounded-full bg-white/80 px-2 py-0.5 text-[9px] tracking-wider text-[#2d2926]/50 backdrop-blur-sm">
-                        After
-                      </span>
-                    </div>
-                  </div>
+                <div className="relative flex h-full flex-col border-t-2 border-[#B76E79]/15 bg-white px-8 pt-10 pb-8 sm:px-10 sm:pt-12 sm:pb-10">
+                  {/* Decorative quote */}
+                  <span className="absolute top-4 right-6 font-serif text-5xl leading-none text-[#B76E79]/8 select-none sm:text-6xl">
+                    &rdquo;
+                  </span>
 
-                  <h3 className="mb-3 font-serif text-[15px] font-normal tracking-wide">
-                    {c.label}
-                  </h3>
-
-                  <div className="mb-4 flex items-center gap-3 text-[11px] text-[#2d2926]/35">
-                    <span>{c.age}</span>
-                    <span className="h-3 w-px bg-[#2d2926]/15" />
-                    <span>期間：{c.period}</span>
-                  </div>
-
-                  <p className="text-[13px] leading-[2] font-light text-[#2d2926]/50">
-                    {c.comment}
+                  <p className="relative z-10 mb-8 flex-1 font-serif text-[14px] italic leading-[2.2] text-[#2d2926]/55">
+                    {v.comment}
                   </p>
+
+                  <div className="mt-auto">
+                    <div className="mb-3 h-px w-full bg-[#B76E79]/[.06]" />
+
+                    <h3 className="mb-2 text-[13px] font-normal tracking-wide text-[#2d2926]/70">
+                      {v.label}
+                    </h3>
+
+                    <div className="flex items-center gap-3 text-[11px] text-[#2d2926]/35">
+                      <span>{v.age}</span>
+                      <span className="h-3 w-px bg-[#2d2926]/15" />
+                      <span>期間：{v.period}</span>
+                    </div>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -590,17 +575,11 @@ export default function BeautyPage() {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="overflow-hidden rounded-2xl border border-[#B76E79]/[.06]">
+            <div className="border-t border-[#B76E79]/[.08]">
               {priceList.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-between px-6 py-5 sm:px-8 sm:py-6 ${
-                    i % 2 === 0 ? "bg-white" : "bg-[#faf7f2]/50"
-                  } ${
-                    i < priceList.length - 1
-                      ? "border-b border-[#B76E79]/[.06]"
-                      : ""
-                  }`}
+                  className="flex items-center justify-between border-b border-[#B76E79]/[.08] px-2 py-5 sm:px-4 sm:py-6"
                 >
                   <div>
                     <span className="text-[14px] tracking-wide text-[#2d2926]/70">
@@ -618,6 +597,10 @@ export default function BeautyPage() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-8 text-center text-[12px] leading-relaxed text-[#2d2926]/30">
+              初回カウンセリングは無料です。お気軽にご相談ください。
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -645,7 +628,7 @@ export default function BeautyPage() {
 
       {/* ===== 10. Access ===== */}
       <section id="access" className="bg-white py-28 sm:py-36 lg:py-44">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <FadeIn>
             <span className="mb-4 block text-center text-[11px] font-normal tracking-[.35em] text-[#B76E79]/50 uppercase">
               Access
@@ -659,102 +642,77 @@ export default function BeautyPage() {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-              {/* Map placeholder */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-[#f5f0eb] to-[#ede4db] lg:aspect-auto lg:min-h-[400px]">
-                {/* TODO: Replace with actual Google Maps embed or static map */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      className="mx-auto mb-3 h-8 w-8 text-[#B76E79]/30"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={1}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span className="text-[11px] tracking-wider text-[#2d2926]/30">
-                      Map
-                    </span>
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 gap-0 border-t border-[#B76E79]/[.08] md:grid-cols-3">
+              <div className="border-b border-[#B76E79]/[.08] py-8 md:border-b-0 md:border-r md:py-10 md:pr-10">
+                <dt className="mb-3 text-[11px] tracking-[.2em] text-[#B76E79]/50 uppercase">
+                  Address
+                </dt>
+                <dd className="text-[14px] leading-relaxed text-[#2d2926]/60">
+                  〒150-0001
+                  <br />
+                  東京都渋谷区神宮前4-12-8
+                  <br />
+                  表参道ヒルズ West 5F
+                </dd>
               </div>
-
-              {/* Info */}
-              <div className="flex flex-col justify-center">
-                <dl className="space-y-8">
-                  <div>
-                    <dt className="mb-2 text-[11px] tracking-[.2em] text-[#B76E79]/50 uppercase">
-                      Address
-                    </dt>
-                    <dd className="text-[14px] leading-relaxed text-[#2d2926]/60">
-                      〒150-0001
-                      <br />
-                      東京都渋谷区神宮前4-12-8
-                      <br />
-                      表参道ヒルズ West 5F
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="mb-2 text-[11px] tracking-[.2em] text-[#B76E79]/50 uppercase">
-                      Hours
-                    </dt>
-                    <dd className="text-[14px] leading-relaxed text-[#2d2926]/60">
-                      月〜金 10:00 - 19:00
-                      <br />
-                      土・祝 10:00 - 17:00
-                      <br />
-                      <span className="text-[#2d2926]/35">
-                        休診日：日曜日・年末年始
-                      </span>
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="mb-2 text-[11px] tracking-[.2em] text-[#B76E79]/50 uppercase">
-                      Station
-                    </dt>
-                    <dd className="text-[14px] leading-relaxed text-[#2d2926]/60">
-                      東京メトロ表参道駅 A2出口より徒歩3分
-                      <br />
-                      JR原宿駅 表参道口より徒歩8分
-                    </dd>
-                  </div>
-                </dl>
+              <div className="border-b border-[#B76E79]/[.08] py-8 md:border-b-0 md:border-r md:py-10 md:px-10">
+                <dt className="mb-3 text-[11px] tracking-[.2em] text-[#B76E79]/50 uppercase">
+                  Hours
+                </dt>
+                <dd className="text-[14px] leading-relaxed text-[#2d2926]/60">
+                  月〜金 10:00 - 19:00
+                  <br />
+                  土・祝 10:00 - 17:00
+                  <br />
+                  <span className="text-[#2d2926]/35">
+                    休診日：日曜日・年末年始
+                  </span>
+                </dd>
+              </div>
+              <div className="py-8 md:py-10 md:pl-10">
+                <dt className="mb-3 text-[11px] tracking-[.2em] text-[#B76E79]/50 uppercase">
+                  Station
+                </dt>
+                <dd className="text-[14px] leading-relaxed text-[#2d2926]/60">
+                  東京メトロ表参道駅
+                  <br />
+                  A2出口より徒歩3分
+                  <br />
+                  <span className="text-[#2d2926]/35">
+                    JR原宿駅 表参道口より徒歩8分
+                  </span>
+                </dd>
               </div>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* ===== 11. Final CTA ===== */}
-      <section id="cta" className="bg-[#faf7f2] py-32 sm:py-40 lg:py-48">
+      {/* ===== 11. Final CTA — dark dramatic ===== */}
+      <section id="cta" className="bg-[#1a2a3a] py-32 sm:py-40 lg:py-48">
         <div className="mx-auto max-w-2xl px-5 text-center">
           <FadeIn>
-            <h2 className="mb-6 font-serif text-[1.75rem] font-light leading-snug tracking-wide sm:text-3xl lg:text-[2.25rem]">
+            <span className="mb-6 block text-[11px] tracking-[.35em] text-white/30 uppercase">
+              Reservation
+            </span>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <h2 className="mb-6 font-serif text-[1.75rem] font-light leading-snug tracking-wide text-white sm:text-3xl lg:text-[2.25rem]">
               まずは、お気軽にご相談ください。
             </h2>
           </FadeIn>
 
-          <FadeIn delay={100}>
-            <p className="mb-12 text-sm leading-[2.2] font-light text-[#2d2926]/50 sm:text-[15px]">
+          <FadeIn delay={200}>
+            <p className="mb-12 text-sm leading-[2.2] font-light text-white/45 sm:text-[15px]">
               無料カウンセリングで、あなたに最適な治療プランをご提案します。
             </p>
           </FadeIn>
 
-          <FadeIn delay={200}>
+          <FadeIn delay={300}>
             <a
               href="#"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#B76E79] px-10 py-4 text-sm font-medium tracking-wider text-white transition-all duration-300 hover:bg-[#a05a64] hover:shadow-[0_8px_30px_rgba(183,110,121,0.3)]"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-10 py-4 text-sm font-medium tracking-wider text-[#1a2a3a] transition-all duration-300 hover:bg-white/90 hover:shadow-[0_8px_30px_rgba(255,255,255,0.15)]"
             >
               無料カウンセリングを予約する
               <svg
@@ -773,16 +731,16 @@ export default function BeautyPage() {
             </a>
           </FadeIn>
 
-          <FadeIn delay={300}>
-            <p className="mt-8 text-[13px] tracking-wider text-[#2d2926]/35">
+          <FadeIn delay={400}>
+            <p className="mt-8 text-[13px] tracking-wider text-white/30">
               <span className="mr-1">&#9742;</span>
               <a
                 href="tel:03-1234-5678"
-                className="transition-colors duration-300 hover:text-[#B76E79]"
+                className="transition-colors duration-300 hover:text-white/60"
               >
                 03-1234-5678
               </a>
-              <span className="mx-2 text-[#2d2926]/15">|</span>
+              <span className="mx-2 text-white/15">|</span>
               <span className="text-[11px]">受付 10:00 - 19:00</span>
             </p>
           </FadeIn>
@@ -790,14 +748,14 @@ export default function BeautyPage() {
       </section>
 
       {/* ===== 12. Footer ===== */}
-      <footer className="border-t border-[#B76E79]/[.06] bg-white py-12 sm:py-16">
+      <footer className="bg-[#1a2a3a] border-t border-white/[.06] py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+          <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
             <a
               href="#"
-              className="font-serif text-sm font-light tracking-[.2em] text-[#B76E79]"
+              className="font-serif text-xl italic font-normal tracking-wide text-white/60 transition-colors duration-300 hover:text-white/80"
             >
-              LUMINE CLINIC
+              Lumine Clinic
             </a>
 
             <nav className="flex items-center gap-6">
@@ -810,7 +768,7 @@ export default function BeautyPage() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-[11px] tracking-wider text-[#2d2926]/30 transition-colors duration-300 hover:text-[#B76E79]"
+                  className="text-[11px] tracking-wider text-white/25 transition-colors duration-300 hover:text-white/50"
                 >
                   {link.label}
                 </a>
@@ -818,7 +776,7 @@ export default function BeautyPage() {
             </nav>
           </div>
 
-          <p className="mt-10 text-center text-[10px] tracking-wider text-[#2d2926]/20">
+          <p className="mt-10 text-center text-[10px] tracking-wider text-white/15">
             &copy; 2024 LUMINE CLINIC. All rights reserved.
           </p>
         </div>
