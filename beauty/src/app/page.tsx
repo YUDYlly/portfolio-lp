@@ -181,26 +181,24 @@ export default function BeautyPage() {
       </div>
 
       {/* ===== 1. Hero — Orchidee-style editorial ===== */}
-      <section className="relative min-h-[100dvh] overflow-hidden bg-white">
-        {/* Brand name — massive, flush left, near top */}
-        <div className="absolute top-4 left-0 z-20 pl-3 sm:top-6 sm:pl-6 lg:top-8 lg:pl-8">
+      {/* PC はロゴの下にキャッチ・右に写真のスライド。スマホ・タブレットは上から ロゴ → キャッチ → 写真 の順に流す */}
+      <section className="relative overflow-hidden bg-white lg:min-h-[100dvh]">
+        <div className="relative z-20 px-4 pt-5 sm:px-6 sm:pt-6 lg:absolute lg:top-8 lg:left-0 lg:px-0 lg:pt-0 lg:pl-8">
           <FadeIn>
-            <h1 className="font-serif text-[5rem] leading-[0.88] font-normal text-black sm:text-[8rem] lg:text-[10rem] xl:text-[12rem]">
+            <h1 className="font-serif text-[4.5rem] leading-[0.88] font-normal text-black sm:text-[7rem] lg:text-[10rem] xl:text-[12rem]">
               <span className="italic">Lumine</span>
               <br />
               <span className="italic">Clinic</span>
             </h1>
           </FadeIn>
-        </div>
 
-        {/* Subtitle block — directly below brand name, shifted right */}
-        <div className="absolute top-[54%] left-[5%] z-20 sm:top-[52%] sm:left-[6%] lg:top-[50%] lg:left-[8%]">
+          {/* キャッチ — ロゴの真下に置き、画面の高さによってロゴと重ならないようにする */}
           <FadeIn delay={300}>
-            <div className="max-w-sm px-6 py-5 sm:max-w-md">
+            <div className="mt-6 max-w-md sm:mt-8 lg:mt-12 lg:ml-[5vw] lg:px-6 lg:py-5">
               <p className="font-serif text-lg leading-relaxed font-normal text-black sm:text-xl">
                 あなたの美しさを、科学で。
               </p>
-              <p className="mt-3 text-[12px] leading-[2] font-normal text-black/70">
+              <p className="mt-3 text-[13px] leading-[2] font-normal text-black/70 sm:text-[12px]">
                 15,000件以上の症例実績。女性院長が、一人ひとりに寄り添います。
               </p>
             </div>
@@ -219,8 +217,8 @@ export default function BeautyPage() {
           <HeroSlider />
         </div>
 
-        {/* Mobile: Single hero image */}
-        <div className="relative mt-[60vh] h-[40vh] lg:hidden">
+        {/* スマホ・タブレット: 写真を1枚、横幅いっぱいに */}
+        <div className="relative mt-8 aspect-[4/5] sm:mt-10 sm:aspect-[16/10] lg:hidden">
           <Image
             src="/images/hero-1.webp"
             alt="LUMINE CLINIC"
@@ -264,7 +262,7 @@ export default function BeautyPage() {
 
       {/* ===== Gallery — Orchidee-style scattered images on dark bg ===== */}
       <section id="gallery" className="relative overflow-hidden bg-[#1a2a3a]">
-        <div className="relative mx-auto min-h-[110vh] max-w-[1600px] lg:min-h-[120vh]">
+        <div className="relative mx-auto hidden max-w-[1600px] lg:block lg:min-h-[120vh]">
           {/* Brand name — centered, large white */}
           <h2 className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 font-serif text-[5rem] italic font-normal text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] sm:text-[8rem] lg:text-[12rem] xl:text-[14rem]">
             Lumine
@@ -305,6 +303,17 @@ export default function BeautyPage() {
             <Image src="/images/gallery-4.webp" alt="" width={800} height={800} className="w-full" />
           </div>
         </div>
+        {/* スマホ・タブレット: 写真を2列に並べ、ロゴを真ん中に重ねる */}
+        <div className="relative grid grid-cols-2 gap-2 p-2 sm:grid-cols-3 sm:gap-3 sm:p-3 lg:hidden">
+          {["gallery-7", "gallery-1", "gallery-6", "gallery-2", "gallery-3", "gallery-4"].map((g) => (
+            <div key={g} className="relative aspect-[3/4] overflow-hidden">
+              <Image src={`/images/${g}.webp`} alt="" fill sizes="(min-width: 640px) 33vw, 50vw" className="object-cover" />
+            </div>
+          ))}
+          <p aria-hidden="true" className="pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 font-serif text-[5rem] italic font-normal text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)] sm:text-[7rem]">
+            Lumine
+          </p>
+        </div>
       </section>
 
       {/* ===== 3. Concerns ===== */}
@@ -322,17 +331,13 @@ export default function BeautyPage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-4 lg:gap-x-0">
             {concerns.map((c, i) => (
               <FadeIn key={i} delay={150 + i * 100}>
                 <div
-                  className={`py-8 sm:py-10 ${
-                    i > 0
-                      ? "border-t border-[#B76E79]/10 sm:border-t-0 sm:border-l sm:pl-8"
-                      : ""
-                  } ${i < concerns.length - 1 ? "sm:pr-8" : ""} ${
-                    i === 0 ? "sm:pr-8" : ""
-                  } ${i % 2 === 0 && i > 0 ? "sm:border-l-0 sm:pl-0 sm:border-t lg:border-t-0 lg:border-l lg:pl-8" : ""}`}
+                  className={`py-8 sm:py-10 ${i > 0 ? "border-t border-[#B76E79]/10" : ""} ${
+                    i === 1 ? "sm:border-t-0" : ""
+                  } lg:border-t-0 ${i > 0 ? "lg:border-l lg:border-[#B76E79]/10 lg:pl-8" : ""} ${i < concerns.length - 1 ? "lg:pr-8" : ""}`}
                 >
                   <span className="mb-5 block font-serif text-[2.5rem] font-light leading-none text-[#B76E79]/10">
                     {String(i + 1).padStart(2, "0")}
@@ -520,7 +525,7 @@ export default function BeautyPage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-5 lg:gap-6">
             {voices.map((v, i) => (
               <FadeIn key={i} delay={150 + i * 100}>
                 <div className="relative flex h-full flex-col border-t-2 border-[#B76E79]/15 bg-white px-8 pt-10 pb-8 sm:px-10 sm:pt-12 sm:pb-10">
